@@ -17,3 +17,10 @@ class testBolwingGame(unittest.TestCase):
     def rollMany(self, n, pins):
         for i in xrange(n):
             self._g.roll(pins)
+
+    def testRollSpare(self):
+        self._g.roll(5)
+        self._g.roll(5) # Spare
+        self._g.roll(3)
+        self.rollMany(17, 0)
+        assert self._g.score() == 16
