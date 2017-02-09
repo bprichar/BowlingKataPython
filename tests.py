@@ -7,11 +7,13 @@ class testBolwingGame(unittest.TestCase):
         self._g = Game.Game()
 
     def testGutterGame(self):
-        for i in xrange(20):
-            self._g.roll(0)
+        self.rollMany(20, 0)
         assert self._g.score() == 0
 
     def testAllOnes(self):
-        for i in xrange(20):
-            self._g.roll(1)
+        self.rollMany(20, 1)
         assert self._g.score() == 20
+
+    def rollMany(self, n, pins):
+        for i in xrange(n):
+            self._g.roll(pins)
