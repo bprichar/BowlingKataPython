@@ -13,6 +13,9 @@ class Game():
             if self._rolls[i] + self._rolls[i+1] == 10: #Spare
                 score += 10 + self._rolls[i+2]
                 i += 2
+            elif self._rolls[i] == 10: #Strike
+                score += 10 + self._rolls[i+1] + self._rolls[i+2]
+                i += 1
             else:
                 score += self._rolls[i] + self._rolls[i+1]
                 i += 2
