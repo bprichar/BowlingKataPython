@@ -31,3 +31,7 @@ class testBolwingGame(unittest.TestCase):
         self._g.roll(4)
         self.rollMany(17, 0)
         assert self._g.score() == 24
+
+    def testPerfectGame(self):
+        self.rollMany(12, 10)
+        assert self._g.score() == 300
